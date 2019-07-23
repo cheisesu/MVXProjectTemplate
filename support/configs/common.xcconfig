@@ -1,0 +1,4 @@
+PRODUCT_BUNDLE_IDENTIFIER_PREFIX = ru.dmitryshelonin.mvtemplate.ios
+APP_VERSION = 0.0.1
+BUILD_NUMBER = 1
+DISPLAY_NAME = MV-Project-Template

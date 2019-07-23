@@ -1,0 +1,30 @@
+//
+//  {{ module_info.file_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import EasyDi
+import PresentationSupport
+
+final class {{ module_info.name }}Assembly: Assembly, ResolvingAssembly {
+    private lazy var infrastructure: InfrastructureAssembly = self.context.assembly()
+
+    private var view: {{ module_info.name }}ViewInput { return definePlaceholder() }
+    private var viewOutput: {{ module_info.name }}ViewOutput { 
+        return define(init: {{ module_info.name }}Presenter(view: self.view, router: self.infrastructure.router)) 
+    }
+
+    func inject(into view: {{ module_info.name }}ViewController) {
+        defineInjection(key: "view", into: view) {
+            $0.set(output: self.viewOutput)
+            return $0
+        }
+    }
+}
+
+extension {{ module_info.name }}ViewController: MyStoryboardInstantiatable {
+    typealias InstantiationAssembly = {{ module_info.name }}Assembly
+}

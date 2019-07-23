@@ -1,0 +1,12 @@
+# Template information section
+name: "mvvm"
+summary: "MVVM module template with UIViewController as a View."
+author: "Dmitry Shelonin"
+version: "1.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: ViewController.swift, path: Code/viewController.swift.liquid}
+- {name: ViewModel.swift, path: Code/viewModel.swift.liquid}
+- {name: Assembly.swift, path: Code/assembly.swift.liquid}

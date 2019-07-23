@@ -1,0 +1,88 @@
+PODS:
+  - Alamofire (4.8.2)
+  - AppIconGen (0.2.0)
+  - ArchitecturesSupport (0.0.2)
+  - Differentiator (4.0.1)
+  - EasyDi (1.5.0)
+  - FunctionalUI (0.0.1)
+  - RxAlamofire (5.0.0):
+    - RxAlamofire/Core (= 5.0.0)
+  - RxAlamofire/Core (5.0.0):
+    - Alamofire (~> 4.8)
+    - RxSwift (~> 5.0)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - SnapKit (5.0.0)
+  - SwiftGen (6.1.0)
+  - SwiftLint (0.34.0)
+
+DEPENDENCIES:
+  - AppIconGen
+  - ArchitecturesSupport (from `https://gitlab.com/b1pods/architecturessupport.git`)
+  - EasyDi
+  - FunctionalUI (from `https://gitlab.com/b1pods/functionalui.git`, branch `develop`)
+  - RxAlamofire (~> 5.0)
+  - RxCocoa (~> 5)
+  - RxDataSources (~> 4.0)
+  - RxSwift (~> 5)
+  - SnapKit (~> 5.0.0)
+  - SwiftGen
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AppIconGen
+    - Differentiator
+    - EasyDi
+    - RxAlamofire
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - SwiftGen
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  ArchitecturesSupport:
+    :git: https://gitlab.com/b1pods/architecturessupport.git
+  FunctionalUI:
+    :branch: develop
+    :git: https://gitlab.com/b1pods/functionalui.git
+
+CHECKOUT OPTIONS:
+  ArchitecturesSupport:
+    :commit: 83fad0a224e9711c8164e9cf45f58125e866dc08
+    :git: https://gitlab.com/b1pods/architecturessupport.git
+  FunctionalUI:
+    :commit: e100f3ba44fc23f2a4a74062b283995f28b02360
+    :git: https://gitlab.com/b1pods/functionalui.git
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AppIconGen: a20e4c907426936b7ff918541d9c6584249fb97a
+  ArchitecturesSupport: 0ee5ebca59165f2eeded843e37da9e4b233470f2
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  EasyDi: 69f886c8911504d33cb55db4a47648f434feeddd
+  FunctionalUI: 691581fc487dacf74ebb6bea1c2591c45745fd81
+  RxAlamofire: e7875a012aff55345672d0f70a2a9cd6aeb0f211
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
+
+PODFILE CHECKSUM: 1e4e4cc4e4d2af064c6399898ce0859653620ef5
+
+COCOAPODS: 1.7.5

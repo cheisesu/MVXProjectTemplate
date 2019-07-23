@@ -1,0 +1,99 @@
+name: MV-Project-Template
+options:
+  usesTabs: false
+  indentWidth: 4
+  tabWidth: 4
+  createIntermediateGroups: true
+  transitivelyLinkDependencies: true
+  groupSortPosition: top
+  bundleIdPrefix: ${PRODUCT_BUNDLE_IDENTIFIER_PREFIX}
+  deploymentTarget:
+    iOS: "11.0"
+configs:
+  StagingDebug: debug
+  StagingRelease: release
+  ProductionDebug: debug
+  ProductionRelease: release
+configFiles:
+  StagingDebug: support/configs/staging.debug.xcconfig
+  StagingRelease: support/configs/staging.release.xcconfig
+  ProductionDebug: support/configs/production.debug.xcconfig
+  ProductionRelease: support/configs/production.release.xcconfig
+schemes:
+  Staging:
+    build:
+      targets:
+        MV-Project-Template: all
+    run:
+      config: StagingDebug
+    analyze:
+      config: StagingDebug
+    profile:
+      config: StagingRelease
+    archive:
+      config: StagingRelease
+  Production:
+    build:
+      targets:
+        MV-Project-Template: all
+    run:
+      config: ProductionDebug
+    analyze:
+      config: ProductionDebug
+    profile:
+      config: ProductionRelease
+    archive:
+      config: ProductionRelease
+settings:
+  #DEVELOPMENT_TEAM: 96ECRH76W5
+  SWIFT_VERSION: "5.0"
+targets:
+  MV-Project-Template:
+    type: application
+    platform: iOS
+    sources: Application
+    info: 
+      path: Application/Info.plist
+      properties: 
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UILaunchStoryboardName: LaunchScreen
+        CFBundleShortVersionString: "$(APP_VERSION)"
+        CFBundleVersion: "$(BUILD_NUMBER)"
+        CFBundleDisplayName: "$(DISPLAY_NAME)"
+    prebuildScripts:
+      - path: support/scripts/swiftlint.sh
+        name: SwiftLint
+      - script: '"${PODS_ROOT}/AppIconGen/appicongen" --input icon.png --xcassets Application/Resources/Assets.xcassets/'
+        name: AppIconGen
+    dependencies:
+      - target: Presentation
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ${PRODUCT_BUNDLE_IDENTIFIER_PREFIX}
+        TARGETED_DEVICE_FAMILY: "1"
+  Presentation:
+    type: framework
+    platform: iOS
+    sources: Presentation
+    dependencies:
+      - target: BusinessApplication
+      - target: BusinessFramework
+      - target: PresentationSupport
+  PresentationSupport:
+    type: framework
+    platform: iOS
+    sources: PresentationSupport
+    prebuildScripts:
+      - path: support/scripts/swiftgen.sh
+        name: SwiftGen
+# Core layer
+  BusinessFramework:
+    type: framework
+    platform: iOS
+    sources: BusinessFramework
+  BusinessApplication:
+    type: framework
+    platform: iOS
+    sources: BusinessApplication
+    dependencies:
+      - target: BusinessFramework

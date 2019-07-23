@@ -1,0 +1,46 @@
+//
+//  {{ module_info.file_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import PresentationSupport
+import ArchitecturesSupport
+import RxSwift
+import RxCocoa
+
+protocol {{ module_info.name }}View: View {}
+
+final class {{ module_info.name }}ViewController: BaseViewController, {{ module_info.name }}View {
+    private var viewModel: {{ module_info.name }}ViewModel!
+    private var disposeBag: DisposeBag = .init()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.setup()
+    }
+}
+
+// MARK: - VIEW MODEL INJECTABLE
+
+extension {{ module_info.name }}ViewController: ViewModelInjectable {
+    func set(viewModel: ViewModel) {
+        self.viewModel = viewModel as? {{ module_info.name }}ViewModel
+
+        self.setupBindings()
+    }
+}
+
+// MARK: - CONFIGURATIONS
+
+private extension {{ module_info.name }}ViewController {
+    func setup() {
+    }
+
+    func setupBindings() {
+        self.viewModel.title.drive(self.rx.title).disposed(by: self.disposeBag)
+    }
+}

@@ -1,0 +1,38 @@
+//
+//  {{ module_info.file_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import PresentationSupport
+import ArchitecturesSupport
+
+final class {{ module_info.name }}ViewController: BaseViewController {
+    private var output: {{ module_info.name }}ViewOutput!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.setup()
+
+        self.output.viewIsReady()
+    }
+}
+
+// MARK: - VIEW INPUT
+
+extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewInput {
+    func set(output: ViewOutput) {
+        self.output = output as? {{ module_info.name }}ViewOutput
+    }
+}
+
+// MARK: - CONFIGURATIONS
+
+private extension {{ module_info.name }}ViewController {
+    func setup() {
+
+    }
+}

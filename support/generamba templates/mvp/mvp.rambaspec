@@ -1,0 +1,13 @@
+# Template information section
+name: "mvp"
+summary: "MVP module template with UIViewController as a View."
+author: "Dmitry Shelonin"
+version: "1.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: ViewController.swift, path: Code/viewController.swift.liquid}
+- {name: Presenter.swift, path: Code/presenter.swift.liquid}
+- {name: Assembly.swift, path: Code/assembly.swift.liquid}
+- {name: Module.swift, path: Code/module.swift.liquid}

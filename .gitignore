@@ -1,0 +1,5 @@
+Pods
+*.xcodeproj
+*.xcworkspace
+Application/Resources/Assets.xcassets/AppIcon.appiconset
+Templates

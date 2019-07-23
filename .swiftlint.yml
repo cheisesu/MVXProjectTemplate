@@ -1,0 +1,9 @@
+excluded:
+  - Pods
+  - Carthage
+line_length: 140
+
+identifier_name:
+  min_length: 1
+  excluded:
+    - id

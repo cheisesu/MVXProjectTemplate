@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Subtitan
+
+  Created by Dmitry Shelonin on 19/03/2018.
+  
+*/
+
+"splash.text" = "YouCook";
+
+"home.tabs.fridge" = "My Fridge";
+"home.tabs.cookingBook" = "Cooking Book";
+"home.tabs.purchases" = "My Purchases";
+
+"fridge.title" = "My Fridge";
