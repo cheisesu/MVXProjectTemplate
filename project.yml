@@ -26,6 +26,8 @@ schemes:
         MV-Project-Template: all
     run:
       config: StagingDebug
+    test:
+      config: StagingDebug
     analyze:
       config: StagingDebug
     profile:
@@ -37,6 +39,8 @@ schemes:
       targets:
         MV-Project-Template: all
     run:
+      config: ProductionDebug
+    test:
       config: ProductionDebug
     analyze:
       config: ProductionDebug
